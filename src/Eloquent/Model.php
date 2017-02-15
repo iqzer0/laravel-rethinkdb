@@ -13,6 +13,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     /**
+     * Disable autoincrement and casting primary key as integer
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
      * Get the format for database stored dates.
      *
      * @return string
