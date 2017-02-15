@@ -4,7 +4,6 @@ namespace dkuzmenchuk\RethinkDB\Schema;
 
 use Closure;
 use dkuzmenchuk\Rethinkdb\Connection;
-use dkuzmenchuk\Rethinkdb\Schema\Blueprint;
 use r;
 
 class Builder extends \Illuminate\Database\Schema\Builder
