@@ -1,6 +1,6 @@
 <?php
 
-namespace duxet\Rethinkdb;
+namespace dkuzmenchuk\Rethinkdb;
 
 use r;
 

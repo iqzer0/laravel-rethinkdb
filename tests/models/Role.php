@@ -1,6 +1,6 @@
 <?php
 
-use \duxet\Rethinkdb\Eloquent\Model;
+use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
 
 class Role extends Model
 {

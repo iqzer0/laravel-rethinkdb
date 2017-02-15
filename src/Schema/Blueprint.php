@@ -1,6 +1,6 @@
 <?php
 
-namespace duxet\RethinkDB\Schema;
+namespace dkuzmenchuk\RethinkDB\Schema;
 
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Grammars\Grammar;

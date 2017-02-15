@@ -1,6 +1,6 @@
 <?php
 
-use duxet\Rethinkdb\Schema\Blueprint;
+use dkuzmenchuk\Rethinkdb\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class DummyClass extends Migration

@@ -1,11 +1,11 @@
 <?php
 
-namespace duxet\Rethinkdb\Eloquent;
+namespace dkuzmenchuk\Rethinkdb\Eloquent;
 
 use Carbon\Carbon;
 use DateTime;
-use duxet\Rethinkdb\Eloquent\Relations\BelongsTo;
-use duxet\Rethinkdb\Query\Builder as QueryBuilder;
+use dkuzmenchuk\Rethinkdb\Eloquent\Relations\BelongsTo;
+use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
@@ -73,7 +73,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
     {
         $connection = $this->getConnection();
         // Check the connection type
-        if ($connection instanceof \duxet\Rethinkdb\Connection) {
+        if ($connection instanceof \dkuzmenchuk\Rethinkdb\Connection) {
             return new QueryBuilder($connection);
         }
 
@@ -83,9 +83,9 @@ class Model extends \Illuminate\Database\Eloquent\Model
     /**
      * Create a new Eloquent query builder for the model.
      *
-     * @param \duxet\Rethinkdb\Query\Builder $query
+     * @param \dkuzmenchuk\Rethinkdb\Query\Builder $query
      *
-     * @return \duxet\Rethinkdb\Eloquent\Builder|static
+     * @return \dkuzmenchuk\Rethinkdb\Eloquent\Builder|static
      */
     public function newEloquentBuilder($query)
     {

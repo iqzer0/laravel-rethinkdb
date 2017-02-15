@@ -19,7 +19,7 @@ This is an example of how the laravel Users Migration file has become
 
 	<?php
 
-	use duxet\Rethinkdb\Schema\Blueprint;
+	use dkuzmenchuk\Rethinkdb\Schema\Blueprint;
 	use Illuminate\Database\Migrations\Migration;
 
 	class CreateUsersTable extends Migration

@@ -2,11 +2,11 @@ laravel-rethinkdb
 =================
 
 
-[![Total Downloads](https://img.shields.io/packagist/dt/duxet/laravel-rethinkdb.svg?style=flat)](https://packagist.org/packages/duxet/laravel-rethinkdb)
-[![MIT License](https://img.shields.io/packagist/l/duxet/laravel-rethinkdb.svg?style=flat)](https://packagist.org/packages/duxet/laravel-rethinkdb)
-[![Build Status](https://img.shields.io/travis/duxet/laravel-rethinkdb/master.svg?style=flat)](https://travis-ci.org/duxet/laravel-rethinkdb)
-[![Coverage Status](https://img.shields.io/codeclimate/coverage/github/duxet/laravel-rethinkdb.svg?style=flat)](https://codeclimate.com/github/duxet/laravel-rethinkdb)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/duxet/laravel-rethinkdb/master.svg?style=flat)](https://scrutinizer-ci.com/g/duxet/laravel-rethinkdb/)
+[![Total Downloads](https://img.shields.io/packagist/dt/dkuzmenchuk/laravel-rethinkdb.svg?style=flat)](https://packagist.org/packages/dkuzmenchuk/laravel-rethinkdb)
+[![MIT License](https://img.shields.io/packagist/l/dkuzmenchuk/laravel-rethinkdb.svg?style=flat)](https://packagist.org/packages/dkuzmenchuk/laravel-rethinkdb)
+[![Build Status](https://img.shields.io/travis/dkuzmenchuk/laravel-rethinkdb/master.svg?style=flat)](https://travis-ci.org/dkuzmenchuk/laravel-rethinkdb)
+[![Coverage Status](https://img.shields.io/codeclimate/coverage/github/dkuzmenchuk/laravel-rethinkdb.svg?style=flat)](https://codeclimate.com/github/dkuzmenchuk/laravel-rethinkdb)
+[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/dkuzmenchuk/laravel-rethinkdb/master.svg?style=flat)](https://scrutinizer-ci.com/g/dkuzmenchuk/laravel-rethinkdb/)
 
 RethinkDB adapter for Laravel (with Eloquent support)
 
@@ -26,7 +26,7 @@ This project is aiming at Laravel 5 which is soon to be released, so it might no
 
 To fully install this package you will have either to add it manually to your `composer.json` file, or you can execute the following command :
 
-`composer require "duxet/laravel-rethinkdb:dev-master"`
+`composer require "dkuzmenchuk/laravel-rethinkdb:dev-master"`
 
 This will install the package and all the required package for it to work.
 
@@ -34,7 +34,7 @@ This will install the package and all the required package for it to work.
 
 After you install the library you will need to add the `Service Provider` file to your `app.php` file like :
 
-`duxet\Rethinkdb\RethinkdbServiceProvider::class,`
+`dkuzmenchuk\Rethinkdb\RethinkdbServiceProvider::class,`
 
 inside your `providers` array.
 
@@ -81,7 +81,7 @@ This is an example of how the laravel Users Migration file has become
 
 	<?php
 
-	use duxet\Rethinkdb\Schema\Blueprint;
+	use dkuzmenchuk\Rethinkdb\Schema\Blueprint;
 	use Illuminate\Database\Migrations\Migration;
 
 	class CreateUsersTable extends Migration
@@ -133,7 +133,7 @@ This is an example of how the laravel model class has become
 
 	namespace App;
 
-	use \duxet\Rethinkdb\Eloquent\Model;
+	use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
 
 	class News extends Model
 	{
@@ -142,7 +142,7 @@ This is an example of how the laravel model class has become
 
 ## Update a Model Class
 
-Be aware that any model that Laravel generates during its initial installation will need to be updated manually in order for them to work properly.  For example, the User model extends `Illuminate\Foundation\Auth\User`, which further extends `Illuminate\Database\Eloquent\Model` instead of `\duxet\Rethinkdb\Eloquent\Model;`. The import `Illuminate\Foundation\Auth\User` needs to be removed from the User model and replaced with `\duxet\Rethinkdb\Eloquent\Model;`, and any interfaces and associated traits implemented in `Illuminate\Foundation\Auth\User` that are required will need to be ported to the User model.
+Be aware that any model that Laravel generates during its initial installation will need to be updated manually in order for them to work properly.  For example, the User model extends `Illuminate\Foundation\Auth\User`, which further extends `Illuminate\Database\Eloquent\Model` instead of `\dkuzmenchuk\Rethinkdb\Eloquent\Model;`. The import `Illuminate\Foundation\Auth\User` needs to be removed from the User model and replaced with `\dkuzmenchuk\Rethinkdb\Eloquent\Model;`, and any interfaces and associated traits implemented in `Illuminate\Foundation\Auth\User` that are required will need to be ported to the User model.
 
 ## Example of Laravel User Model Class
 
@@ -150,7 +150,7 @@ This is an example of how the laravel User model class has become
 
 ```
 use Illuminate\Auth\Authenticatable;
-use \duxet\Rethinkdb\Eloquent\Model;
+use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;

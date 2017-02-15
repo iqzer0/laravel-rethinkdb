@@ -1,6 +1,6 @@
 <?php
 
-namespace duxet\Rethinkdb\Eloquent\Relations;
+namespace dkuzmenchuk\Rethinkdb\Eloquent\Relations;
 
 class BelongsTo extends \Illuminate\Database\Eloquent\Relations\BelongsTo
 {
