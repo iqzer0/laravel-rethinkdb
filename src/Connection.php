@@ -1,8 +1,9 @@
 <?php
 
-namespace duxet\Rethinkdb;
+namespace dkuzmenchuk\Rethinkdb;
 
-use duxet\Rethinkdb\Query\Builder as QueryBuilder;
+use dkuzmenchuk\Rethinkdb\Schema\Grammar;
+use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
 use r;
 
 class Connection extends \Illuminate\Database\Connection
@@ -21,6 +22,8 @@ class Connection extends \Illuminate\Database\Connection
      */
     public function __construct(array $config)
     {
+        $this->schemaGrammar = new Grammar();
+
         $this->config = $config;
         $this->database = $config['database'];
 

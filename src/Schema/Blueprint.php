@@ -1,6 +1,6 @@
 <?php
 
-namespace duxet\RethinkDB\Schema;
+namespace dkuzmenchuk\RethinkDB\Schema;
 
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Grammars\Grammar;
@@ -60,11 +60,12 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
      * Specify an index for the collection.
      *
      * @param string $column
-     * @param mixed  $options
+     * @param mixed $options
      *
+     * @param null $algorithm
      * @return Blueprint
      */
-    public function index($column, $options = null)
+    public function index($column, $options = null, $algorithm = null)
     {
         $conn = $this->connection->getConnection();
         $db = r\db($this->connection->getDatabaseName());

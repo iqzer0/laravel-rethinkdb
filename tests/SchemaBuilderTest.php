@@ -20,7 +20,7 @@ class SchemaBuilderTest extends TestCase
         $instance = $this;
 
         Schema::create('newtable', function ($collection) use ($instance) {
-            $instance->assertInstanceOf('duxet\RethinkDB\Schema\Blueprint', $collection);
+            $instance->assertInstanceOf('dkuzmenchuk\RethinkDB\Schema\Blueprint', $collection);
         });
 
         $this->assertTrue(Schema::hasTable('newtable'));
@@ -38,7 +38,7 @@ class SchemaBuilderTest extends TestCase
         $instance = $this;
 
         Schema::table('newtable', function ($table) use ($instance) {
-            $instance->assertInstanceOf('duxet\RethinkDB\Schema\Blueprint', $table);
+            $instance->assertInstanceOf('dkuzmenchuk\RethinkDB\Schema\Blueprint', $table);
         });
     }
 }

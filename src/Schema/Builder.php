@@ -1,10 +1,9 @@
 <?php
 
-namespace duxet\RethinkDB\Schema;
+namespace dkuzmenchuk\RethinkDB\Schema;
 
 use Closure;
-use duxet\Rethinkdb\Connection;
-use duxet\Rethinkdb\Schema\Blueprint;
+use dkuzmenchuk\Rethinkdb\Connection;
 use r;
 
 class Builder extends \Illuminate\Database\Schema\Builder
