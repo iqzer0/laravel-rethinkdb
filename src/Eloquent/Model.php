@@ -13,6 +13,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     /**
+     * Disable autoincrement and casting primary key as integer
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
      * Get the format for database stored dates.
      *
      * @return string
@@ -221,11 +227,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
                 return true;
             }
 
-            $result = $query->insert($attributes);
-            if ($result['errors'] > 0) {
-                return false;
-            }
-            $this->setAttribute($this->getKeyName(), $result['generated_keys'][0]);
+            $this->insertAndSetId($query, $attributes);
         }
 
         // We will go ahead and set the exists property to true, so that it is set when
