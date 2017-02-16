@@ -6,7 +6,7 @@ use Closure;
 use \Illuminate\Database\Connection;
 use r;
 
-use Illuminate\Database\Schema\Grammars\Grammar;
+use Illuminate\Database\Schema\Grammars\Grammar as BaseGrammar;
 
 class Blueprint extends \Illuminate\Database\Schema\Blueprint
 {
@@ -30,7 +30,7 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
      *
      * @return void
      */
-    public function build(Connection $connection, Grammar $grammar)
+    public function build(Connection $connection, BaseGrammar $grammar)
     {
     }
 

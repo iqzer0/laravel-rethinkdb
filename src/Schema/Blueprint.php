@@ -3,7 +3,7 @@
 namespace dkuzmenchuk\RethinkDB\Schema;
 
 use Illuminate\Database\Connection;
-use Illuminate\Database\Schema\Grammars\Grammar;
+use Illuminate\Database\Schema\Grammars\Grammar as BaseGrammar;
 use r;
 
 class Blueprint extends \Illuminate\Database\Schema\Blueprint
@@ -28,7 +28,7 @@ class Blueprint extends \Illuminate\Database\Schema\Blueprint
      *
      * @return void
      */
-    public function build(Connection $connection, Grammar $grammar)
+    public function build(Connection $connection, BaseGrammar $grammar)
     {
     }
 
