@@ -488,6 +488,22 @@ class Builder extends QueryBuilder
     }
 
     /**
+     * Determine if any rows exist for the current query.
+     *
+     * @return bool
+     */
+    public function exists()
+    {
+        $results = $this->runSelect();
+
+        // If the results has rows, we will we will return true. If there is no
+        // results for this query we will return false as there are no rows for
+        // this query at all and we can return that info here.
+
+        return count($results);
+    }
+
+    /**
      * Handle dynamic method calls into the method.
      *
      * @param string $method
