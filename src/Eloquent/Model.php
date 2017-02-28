@@ -9,6 +9,7 @@ use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Model extends \Illuminate\Database\Eloquent\Model
 {
@@ -168,6 +169,30 @@ class Model extends \Illuminate\Database\Eloquent\Model
         $localKey = $localKey ?: $this->getKeyName();
 
         return new HasMany($instance->newQuery(), $this, $foreignKey, $localKey);
+    }
+
+    /**
+     * Define a polymorphic one-to-many relationship.
+     *
+     * @param  string  $related
+     * @param  string  $name
+     * @param  string  $type
+     * @param  string  $id
+     * @param  string  $localKey
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function morphMany($related, $name, $type = null, $id = null, $localKey = null)
+    {
+        $instance = $this->newRelatedInstance($related);
+
+        // Here we will gather up the morph type and ID for the relationship so that we
+        // can properly query the intermediate table of a relation. Finally, we will
+        // get the table and create the relationship instances for the developers.
+        list($type, $id) = $this->getMorphs($name, $type, $id);
+
+        $localKey = $localKey ?: $this->getKeyName();
+
+        return new MorphMany($instance->newQuery(), $this, $type, $id, $localKey);
     }
 
     /**
