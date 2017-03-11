@@ -5,6 +5,7 @@ namespace dkuzmenchuk\Rethinkdb\Eloquent;
 use Carbon\Carbon;
 use DateTime;
 use dkuzmenchuk\Rethinkdb\Eloquent\Relations\BelongsTo;
+use dkuzmenchuk\Rethinkdb\Eloquent\Relations\BelongsToMany;
 use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -265,5 +266,44 @@ class Model extends \Illuminate\Database\Eloquent\Model
         $this->fireModelEvent('created', false);
 
         return true;
+    }
+
+    /**
+     * Define a many-to-many relationship.
+     *
+     * @param string $related
+     * @param null $table
+     * @param null $foreignKey
+     * @param null $relatedKey
+     * @param null $relation
+     * @return BelongsToMany
+     */
+    public function belongsToMany($related, $table = null, $foreignKey = null, $relatedKey = null, $relation = null)
+    {
+        // If no relationship name was passed, we will pull backtraces to get the
+        // name of the calling function. We will use that function name as the
+        // title of this relation since that is a great convention to apply.
+        if (is_null($relation)) {
+            list(, $caller) = debug_backtrace(false, 2);
+            $relation = $caller['function'];
+        }
+
+        // First, we'll need to determine the foreign key and "other key" for the
+        // relationship. Once we have determined the keys we'll make the query
+        // instances as well as the relationship instances we need for this.
+        $instance = new $related();
+
+        $foreignKey = $foreignKey ?: $this->getForeignKey();
+
+        $relatedKey = $relatedKey ?: $instance->getForeignKey();
+
+        // If no table name was provided, we can guess it by concatenating the two
+        // models using underscores in alphabetical order. The two model names
+        // are transformed to snake case from their default CamelCase also.
+        if (is_null($table)) {
+            $table = $this->joiningTable($related);
+        }
+
+        return new BelongsToMany($instance->newQuery(), $this, $table, $foreignKey, $relatedKey, $relation);
     }
 }
