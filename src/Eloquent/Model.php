@@ -21,6 +21,12 @@ class Model extends \Illuminate\Database\Eloquent\Model
     public $incrementing = false;
 
     /**
+     * Array of default values for model
+     * @var array $defaults
+     */
+    protected $defaults = [];
+
+    /**
      * Get the format for database stored dates.
      *
      * @return string
@@ -305,5 +311,41 @@ class Model extends \Illuminate\Database\Eloquent\Model
         }
 
         return new BelongsToMany($instance->newQuery(), $this, $table, $foreignKey, $relatedKey, $relation);
+    }
+
+    /**
+     * Create a new instance of the given model.
+     *
+     * @param  array  $attributes
+     * @param  bool  $exists
+     * @return static
+     */
+    public function newInstance($attributes = [], $exists = false)
+    {
+        // This method just provides a convenient way for us to generate fresh model
+        // instances of this current model. It is particularly useful during the
+        // hydration of new objects via the Eloquent query builder instances.
+        $model = new static((array) $attributes);
+
+        $model = $this->setDefaults($model);
+
+        $model->exists = $exists;
+
+        $model->setConnection($this->getConnectionName());
+
+        return $model;
+    }
+
+    /**
+     * Set default values to model
+     * @param Model $model
+     * @return Model
+     */
+    protected function setDefaults(Model $model)
+    {
+        foreach ($this->defaults as $field => $value) {
+            $model->attributes[$field] = $value;
+        }
+        return $model;
     }
 }
