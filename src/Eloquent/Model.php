@@ -343,7 +343,8 @@ class Model extends \Illuminate\Database\Eloquent\Model
      */
     protected function setDefaults(Model $model)
     {
-        foreach ($this->defaults as $field => $value) {
+        $values = array_merge($this->defaults, $this->attributes);
+        foreach ($values as $field => $value) {
             $model->attributes[$field] = $value;
         }
         return $model;
