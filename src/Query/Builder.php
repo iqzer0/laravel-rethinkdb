@@ -504,6 +504,18 @@ class Builder extends QueryBuilder
     }
 
     /**
+     * Run getAll with index
+     *
+     * @param $value
+     * @param array $opts
+     * @return mixed
+     */
+    public function index($value, array $opts = [])
+    {
+        return $this->query->getAll($value, $opts)->run();
+    }
+
+    /**
      * Handle dynamic method calls into the method.
      *
      * @param string $method
