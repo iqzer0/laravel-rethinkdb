@@ -1,9 +1,9 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb;
+namespace iqzer0\Rethinkdb;
 
-use dkuzmenchuk\Rethinkdb\Schema\Grammar;
-use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
+use iqzer0\Rethinkdb\Schema\Grammar;
+use iqzer0\Rethinkdb\Query\Builder as QueryBuilder;
 use r;
 
 class Connection extends \Illuminate\Database\Connection

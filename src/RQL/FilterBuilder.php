@@ -1,6 +1,6 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb\RQL;
+namespace iqzer0\Rethinkdb\RQL;
 
 use r;
 

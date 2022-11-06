@@ -1,12 +1,12 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb\Eloquent;
+namespace iqzer0\Rethinkdb\Eloquent;
 
 use Carbon\Carbon;
 use DateTime;
-use dkuzmenchuk\Rethinkdb\Eloquent\Relations\BelongsTo;
-use dkuzmenchuk\Rethinkdb\Eloquent\Relations\BelongsToMany;
-use dkuzmenchuk\Rethinkdb\Query\Builder as QueryBuilder;
+use iqzer0\Rethinkdb\Eloquent\Relations\BelongsTo;
+use iqzer0\Rethinkdb\Eloquent\Relations\BelongsToMany;
+use iqzer0\Rethinkdb\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -88,7 +88,7 @@ class Model extends \Illuminate\Database\Eloquent\Model
     {
         $connection = $this->getConnection();
         // Check the connection type
-        if ($connection instanceof \dkuzmenchuk\Rethinkdb\Connection) {
+        if ($connection instanceof \iqzer0\Rethinkdb\Connection) {
             return new QueryBuilder($connection);
         }
 
@@ -98,9 +98,9 @@ class Model extends \Illuminate\Database\Eloquent\Model
     /**
      * Create a new Eloquent query builder for the model.
      *
-     * @param \dkuzmenchuk\Rethinkdb\Query\Builder $query
+     * @param \iqzer0\Rethinkdb\Query\Builder $query
      *
-     * @return \dkuzmenchuk\Rethinkdb\Eloquent\Builder|static
+     * @return \iqzer0\Rethinkdb\Eloquent\Builder|static
      */
     public function newEloquentBuilder($query)
     {

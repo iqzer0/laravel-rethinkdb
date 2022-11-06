@@ -1,6 +1,6 @@
 <?php
 
-namespace dkuzmenchuk\RethinkDB\Schema;
+namespace iqzer0\RethinkDB\Schema;
 
 use Closure;
 use \Illuminate\Database\Connection;

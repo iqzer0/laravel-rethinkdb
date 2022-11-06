@@ -1,12 +1,12 @@
 <?php
 
-namespace dkuzmenchuk\RethinkDB\Schema;
+namespace iqzer0\RethinkDB\Schema;
 
 use Illuminate\Database\Schema\Grammars\Grammar as BaseGrammar;
 
 /**
  * Class Grammar
- * @package dkuzmenchuk\RethinkDB\Schema
+ * @package iqzer0\RethinkDB\Schema
  */
 class Grammar extends BaseGrammar
 {

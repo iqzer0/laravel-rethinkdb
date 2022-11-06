@@ -1,11 +1,11 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb;
+namespace iqzer0\Rethinkdb;
 
-use dkuzmenchuk\Rethinkdb\Console\Migrations\MigrateMakeCommand;
-use dkuzmenchuk\Rethinkdb\Console\Model\ModelMakeCommand;
-use dkuzmenchuk\Rethinkdb\Eloquent\Model;
-use dkuzmenchuk\Rethinkdb\Migrations\MigrationCreator;
+use iqzer0\Rethinkdb\Console\Migrations\MigrateMakeCommand;
+use iqzer0\Rethinkdb\Console\Model\ModelMakeCommand;
+use iqzer0\Rethinkdb\Eloquent\Model;
+use iqzer0\Rethinkdb\Migrations\MigrationCreator;
 use Illuminate\Support\ServiceProvider;
 
 class RethinkdbServiceProvider extends ServiceProvider

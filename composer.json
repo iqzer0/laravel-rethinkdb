@@ -1,14 +1,14 @@
 {
-    "name": "dkuzmenchuk/laravel-rethinkdb",
+    "name": "iqzer0/laravel-rethinkdb",
     "description": "RethinkDB adapter for Laravel",
     "authors": [
         {
-            "name": "dkuzmenchuk"
+            "name": "iqzer0"
         }
     ],
     "license": "MIT",
     "autoload": {
-        "psr-4": { "dkuzmenchuk\\Rethinkdb\\": "src/" }
+        "psr-4": { "iqzer0\\Rethinkdb\\": "src/" }
     },
     "require": {
         "php": ">=5.5.0",

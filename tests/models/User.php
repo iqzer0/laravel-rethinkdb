@@ -1,6 +1,6 @@
 <?php
 
-use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
+use \iqzer0\Rethinkdb\Eloquent\Model;
 
 class User extends Model
 {

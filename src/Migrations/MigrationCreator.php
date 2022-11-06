@@ -1,6 +1,6 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb\Migrations;
+namespace iqzer0\Rethinkdb\Migrations;
 
 use Illuminate\Database\Migrations\MigrationCreator as LaravelMigrationCreator;
 

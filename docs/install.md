@@ -10,7 +10,7 @@
 
 To fully install this package you will have either to add it manually to your `composer.json` file, or you can execute the following command :
 
-`composer require "dkuzmenchuk/laravel-rethinkdb:dev-master"`
+`composer require "iqzer0/laravel-rethinkdb:dev-master"`
 
 This will install the package and all the required package for it to work.
 
@@ -18,7 +18,7 @@ This will install the package and all the required package for it to work.
 
 After you install the library you will need to add the `Service Provider` file to your `app.php` file like :
 
-`dkuzmenchuk\Rethinkdb\RethinkdbServiceProvider::class,`
+`iqzer0\Rethinkdb\RethinkdbServiceProvider::class,`
 
 inside your `providers` array.
 

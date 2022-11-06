@@ -16,7 +16,7 @@ This is an example of how the laravel model class has become
 
 	namespace App;
 
-	use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
+	use \iqzer0\Rethinkdb\Eloquent\Model;
 
 	class News extends Model
 	{

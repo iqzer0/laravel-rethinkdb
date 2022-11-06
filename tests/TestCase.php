@@ -12,7 +12,7 @@ class TestCase extends Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            'dkuzmenchuk\Rethinkdb\RethinkdbServiceProvider',
+            'iqzer0\Rethinkdb\RethinkdbServiceProvider',
         ];
     }
 

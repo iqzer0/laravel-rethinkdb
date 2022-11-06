@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use \dkuzmenchuk\Rethinkdb\Eloquent\Model;
+use \iqzer0\Rethinkdb\Eloquent\Model;
 
 class DummyClass extends Model
 {

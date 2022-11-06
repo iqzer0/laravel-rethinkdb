@@ -10,7 +10,7 @@ class QueryBuilderTest extends TestCase
 
     public function testTable()
     {
-        $this->assertInstanceOf('dkuzmenchuk\Rethinkdb\Query\Builder', DB::table('users'));
+        $this->assertInstanceOf('iqzer0\Rethinkdb\Query\Builder', DB::table('users'));
     }
 
     public function testGet()

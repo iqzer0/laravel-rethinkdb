@@ -1,6 +1,6 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb\Console\Model;
+namespace iqzer0\Rethinkdb\Console\Model;
 
 use Illuminate\Console\GeneratorCommand as LaravelMakeModelCommand;
 use Symfony\Component\Console\Input\InputOption;

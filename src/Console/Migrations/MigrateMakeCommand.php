@@ -1,8 +1,8 @@
 <?php
 
-namespace dkuzmenchuk\Rethinkdb\Console\Migrations;
+namespace iqzer0\Rethinkdb\Console\Migrations;
 
-use dkuzmenchuk\Rethinkdb\Migrations\MigrationCreator;
+use iqzer0\Rethinkdb\Migrations\MigrationCreator;
 use Illuminate\Database\Console\Migrations\MigrateMakeCommand as LaravelMigration;
 use Illuminate\Support\Composer;
 
@@ -21,7 +21,7 @@ class MigrateMakeCommand extends LaravelMigration
     /**
      * Create a new migration install command instance.
      *
-     * @param dkuzmenchuk\Rethinkdb\Migrations\MigrationCreator $creator
+     * @param iqzer0\Rethinkdb\Migrations\MigrationCreator $creator
      * @param \Illuminate\Support\Composer                $composer
      *
      * @return void
